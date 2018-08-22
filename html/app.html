@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/highstock.js"></script>
+    <script src="../js/exporting.js"></script>
+    <script src="../js/drag-panes.js"></script>
+    <script src="../js/dark-unica.js"></script>
+    <script src="../js/map.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/indicator.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/qwebchannel.js"></script>
+    <script src="../js/lib/layer-v3.0.3/layer.js"></script>
+    <script>
+        window.onload = function () {
+            new QWebChannel(qt.webChannelTransport, function (channel) {
+                window.pyjs = channel.objects.pyjs;
+                pyjs.loaded();
+                getcode();
+            });
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+<!--<nav id='menu' class="navbar navbar-default" style="margin: 0;">-->
+<!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+<!--<ul class="mynav">-->
+<!--<li>品种代码</li>-->
+<!--<li><img src="../img/大分割线.png" class="big-line"></li>-->
+<!--<li><a href="#"  class="mybtn ">M1</a></li>-->
+<!--<li><a href="#"  class="mybtn ">M5</a></li>-->
+<!--<li><a href="#"  class="mybtn ">M15</a></li>-->
+<!--<li><a href="#"  class="mybtn ">M30</a></li>-->
+<!--<li><a href="#"  class="mybtn ">H1</a></li>-->
+<!--<li><a href="#"  class="mybtn ">D1</a></li>-->
+<!--<li><a href="#"  class="mybtn ">W1</a></li>-->
+<!--<li><a href="#"  class="mybtn ">MN</a></li>-->
+<!--<li style="float:right;">-->
+<!--<a href="#"  class="mybtn "><img src="../img/search.png"> </a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</nav>-->
+
+<div id="content">
+    <div class="work">
+        <div id="market" class="market table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>种类</td>
+                    <td>最新价</td>
+                    <td>涨跌幅</td>
+                </tr>
+                </thead>
+                <tbody id="code_list">
+                <tr data-code="SC1809">
+                    <td>1</td>
+                    <td>原油1809</td>
+                    <td>481.70</td>
+                    <td>+5.0%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="chart" class="chart">
+            <div id="chart-head" class="chart-head">
+                <table class="table table-condensed">
+                    <tr>
+                        <td><span id="date">--</span></td>
+                        <td>开=<span id="open">--</span></td>
+                        <td>高=<span id="high">--</span></td>
+                        <td>低=<span id="low">--</span></td>
+                        <td>收=<span id="close">--</span></td>
+                        <td>量=<span id="volume">--</span></td>
+                        <td>MA5=<span id="ma5">--</span></td>
+                        <td>MA10=<span id="ma10">--</span></td>
+                        <td>MA30=<span id="ma30">--</span></td>
+                        <td>MA60=<span id="ma60">--</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="chart-main" class="chart-main"></div>
+        </div>
+        <div id="ticker" class="ticker">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="label label-default">原油1809</span>
+                    <span class="label label-danger">481.70</span>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>价格</td>
+                            <td>数量</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>卖5</td>
+                            <td>481.70</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">卖4</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">卖3</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">卖2</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">卖1</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <td style="border: none">买1</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="border: none">买2</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">买3</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">买4</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        <tr>
+                            <td style="border: none">买5</td>
+                            <td style="border: none">481.70</td>
+                            <td style="border: none">300</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="page-header"></h5>
+                    <div style="color: #999999">如果没有输入价格则按市场成交</div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="买入价" aria-label="bp">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+
+                            <input type="text" class="form-control" placeholder="卖出价" aria-label="bv">
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <input type="text" class="form-control" placeholder="买入量" aria-label="sp">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="卖出量" aria-label="sv">
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <button class="btn btn-danger ticker-button">买入</button>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <button class="btn btn-success ticker-button">卖出</button>
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+    <div id="terminal" class="terminal">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="hold">
+                <!-- 持仓-->
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>种类</td>
+                        <td>数量（正买负卖）</td>
+                        <td>均价</td>
+                        <td>盈亏/比例</td>
+                    </tr>
+                    </thead>
+                    <tbody id="holdlist">
+                    <tr data-code="SC1809" data-num="10" data-type="1" class="order_SC1809">
+                        <td>1</td>
+                        <td>原油1809</td>
+                        <td>10</td>
+                        <td>476.60</td>
+                        <td class="profit">50999 / +70%</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="order">
+                <!-- 报单-->
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>时间</td>
+                        <td>种类</td>
+                        <td>数量（正买负卖）</td>
+                        <td>价格</td>
+                        <td>状态</td>
+                    </tr>
+                    </thead>
+                    <tbody id="orderlist">
+                    <tr data-code="SC1809" data-num="10" data-type="1" class="order_SC1809">
+                        <td>1</td>
+                        <td>2018-05-10 18:15:12</td>
+                        <td>原油1809</td>
+                        <td>10</td>
+                        <td>476.60</td>
+                        <td>已成交</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="history">
+                <!-- 成交历史-->
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>时间</td>
+                        <td>种类</td>
+                        <td>开/平</td>
+                        <td>数量（正买负卖）</td>
+                        <td>价格</td>
+                        <td>手续费</td>
+                    </tr>
+                    </thead>
+                    <tbody id="orderhis">
+                    <tr>
+                        <td>1</td>
+                        <td>2018-05-10 18:15:12</td>
+                        <td>原油1809</td>
+                        <td>开</td>
+                        <td>10</td>
+                        <td>476.60</td>
+                        <td>30</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <ul id="hispage" style="margin: 0 auto 10px;" class="pagination">
+                        <li class="active"><a title="Current page is 1">1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs data-tab" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#hold" aria-controls="hold" role="tab" data-toggle="tab" aria-expanded="true">持仓</a>
+            </li>
+            <li role="presentation">
+                <a href="#order" aria-controls="order" role="tab" data-toggle="tab" aria-expanded="false">报单</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#history" aria-controls="history" role="tab" data-toggle="tab" aria-expanded="false">成交</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+</body>
+<script>
+    // 设置内容高度
+    $('#content').height($(document).height());
+    $('#chart-main').height($('#chart').height() - $('#chart-head').height());
+    $('#chart-main').width($(document).width() - $('#market').width() - $('#ticker').width());
+    //窗体大小改变 调整宽高
+    window.onresize = function () {
+        $('#chart-main').width($(document).width() - $('#market').width() - $('#ticker').width());
+    }
+    //绘制主图
+    $(function () {
+        $.getJSON('../data/000001.json', function (data) {
+            data = data.data;
+            var ohlc = [],
+                volume = [],
+                ma5 = MA(data, 5),
+                ma10 = MA(data, 10),
+                ma30 = MA(data, 30),
+                ma60 = MA(data, 60),
+                dif = DIF(data),
+                dea = DEA(data, 9),
+                macd = MACD(data),
+                dataLength = data.length,
+                // set the allowed units for data grouping
+                groupingUnits = [[
+                    'week',                         // unit name
+                    [1]                             // allowed multiples
+                ], [
+                    'month',
+                    [1, 2, 3, 4, 6]
+                ]],
+                i = 0;
+            for (i; i < dataLength; i += 1) {
+                ohlc.push([
+                    data[i][0], // the date
+                    data[i][1], // open
+                    data[i][2], // high
+                    data[i][3], // low
+                    data[i][4] // close
+                ]);
+                volume.push([
+                    data[i][0], // the date
+                    data[i][5] // the volume
+                ]);
+            }
+            // create the chart
+            $('#chart-main').highcharts('StockChart', {
+                chart: {
+                    animation: false,
+                    alignTicks: false
+                },
+                rangeSelector: {
+                    enabled: false
+                },
+                exporting: {
+                    enabled: false
+                },
+                navigator: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                scrollbar: {
+                    enabled: false
+                },
+                mapNavigation: {
+                    enabled: true,
+                    enableButtons: false
+                },
+                tooltip: {
+                    formatter: function () {
+                        var point = this.points[0].point
+                        var index = point.index
+                        var ohlc = point.options;
+                        $('#date').html(UnixToDate(ohlc.x));
+                        $('#open').html(ohlc.open);
+                        $('#high').html(ohlc.high);
+                        $('#low').html(ohlc.low);
+                        $('#close').html(ohlc.close);
+                        $('#volume').html(data[index][5]);
+                        $('#ma5').html(VToF(ma5[index][1], 3));
+                        $('#ma10').html(VToF(ma10[index][1], 3));
+                        $('#ma30').html(VToF(ma30[index][1], 3));
+                        $('#ma60').html(VToF(ma60[index][1], 3));
+                        return false;
+                    },
+                    shared: true
+                },
+                xAxis: {
+                    dateTimeLabelFormats: {
+                        millisecond: '%H:%M:%S.%L',
+                        second: '%H:%M:%S',
+                        minute: '%H:%M',
+                        hour: '%H:%M',
+                        day: '%y-%m-%d',
+                        week: '%y-%m-%d',
+                        month: '%y-%m',
+                        year: '%Y'
+                    },
+                    lineColor: '#fff',
+                    tickColor: '#fff',
+                },
+                yAxis: [{
+                    lineColor: '#fff',
+                    tickAmount: 9,
+                    tickColor: '#fff',
+                    gridLineWidth: 0,
+                    plotLines: [{
+                        value: 7.96,
+                        width: 1,
+                        color: '#fff',
+                        label: {
+                            text: '7.96',
+                            align: 'right',
+                            y: -10,
+                            x: -10,
+                            style: {
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                fontSize: "13px"
+                            }
+                        }
+                    }],
+                    labels: {
+                        align: 'left',
+                        style: {
+                            color: "#fff",
+                            fontSize: "11px"
+                        }
+                    },
+                    crosshair: true,
+                    height: '75%',
+                    lineWidth: 1,
+
+                }, {
+                    lineColor: '#fff',
+                    tickColor: '#fff',
+                    gridLineWidth: 1,
+                    gridLineColor: '#fff',
+                    tickAmount: 3,
+                    top: '75%',
+                    height: '25%',
+                    labels: {
+                        align: 'left',
+                        style: {
+                            color: "#fff",
+                            fontSize: "11px"
+                        }
+                    },
+                    offset: 0,
+                    lineWidth: 1,
+                }],
+                series: [{
+                    type: 'candlestick',
+                    color: 'skyblue',
+                    lineColor: 'skyblue',
+                    upColor: '#333333',
+                    upLineColor: 'red',
+                    data: ohlc,
+                    dataGrouping: {
+                        units: groupingUnits
+                    },
+                }, {
+                    name: 'ma5',
+                    color: '#999999',
+                    type: 'spline',
+                    data: ma5,
+                    lineWidth: 1,
+                }, {
+                    name: 'ma10',
+                    color: '#ffbb22',
+                    type: 'spline',
+                    data: ma10,
+                    lineWidth: 1,
+                }, {
+                    name: 'ma30',
+                    color: '#9911dd',
+                    type: 'spline',
+                    data: ma30,
+                    lineWidth: 1,
+                }, {
+                    name: 'ma60',
+                    color: '#00ff00',
+                    type: 'spline',
+                    data: ma60,
+                    lineWidth: 1,
+                }, {
+                    name: 'macd',
+                    type: 'column',
+                    data: macd,
+                    yAxis: 1,
+                    lineWidth: 1,
+                }, {
+                    name: 'dif',
+                    color: '#999999',
+                    type: 'spline',
+                    data: dif,
+                    yAxis: 1,
+                    lineWidth: 1,
+                }, {
+                    name: 'dea',
+                    color: '#ffbb22',
+                    type: 'spline',
+                    data: dea,
+                    yAxis: 1,
+                    lineWidth: 1,
+                },]
+            });
+        });
+    });
+</script>
+</html>
