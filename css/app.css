@@ -12,8 +12,9 @@ body {
     margin: 0;
 }
 
+
 .work {
-    height: 644px;
+    height: 793px;
     display: flex;
 }
 
@@ -42,28 +43,29 @@ body {
 }
 
 .market {
-    width: 268px;
+    min-width: 268px;
+    max-width: 268px;
     height: 100%;
     text-align: center;
 }
 
 .chart {
-    background-color: #333333;
     height: 100%;
-    float: left;
-    color: #ffffff;
 }
 
 .chart-head {
     height: 35px;
+    float: bottom;
 }
 
-.chart-head-td {
-    style:"border: none";
+.chart-minute {
+    height: 150px;
 }
+
 .ticker {
     height: 100%;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     text-align: center;
 }
 

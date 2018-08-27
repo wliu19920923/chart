@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7889a437-0284-48a8-8706-6cab57b7d3af" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/contextmenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/000001.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/info.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/app.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/chart-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/contextmenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/dark-unica.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/drag-panes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/exporting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/highstock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/indicator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/qwebchannel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/app.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +20,29 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="app.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="2592">
+              <caret line="108" column="58" selection-start-line="108" selection-start-column="58" selection-end-line="108" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../vquant/Utils/vquantutils/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="153" column="34" selection-start-line="153" selection-start-column="34" selection-end-line="153" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -56,7 +55,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/css/app.css" />
         <option value="$PROJECT_DIR$/html/app.html" />
+        <option value="$PROJECT_DIR$/../../vquant/Utils/vquantutils/serializers.py" />
       </list>
     </option>
   </component>
@@ -70,8 +71,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="2048" />
-    <option name="height" value="1152" />
+    <option name="height" value="1129" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -84,6 +86,16 @@
             <path>
               <item name="chart" type="b2602c69:ProjectViewProjectNode" />
               <item name="chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chart" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chart" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -116,6 +128,14 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="app.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chart/html/app.html" />
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.app.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -139,7 +159,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32961932" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24975075" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
@@ -166,10 +186,24 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="2592">
+          <caret line="108" column="58" selection-start-line="108" selection-start-column="58" selection-end-line="108" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vquant/Utils/vquantutils/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="153" column="34" selection-start-line="153" selection-start-column="34" selection-end-line="153" selection-end-column="34" />
         </state>
       </provider>
     </entry>

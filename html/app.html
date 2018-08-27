@@ -26,30 +26,28 @@
             });
 
         }
-
     </script>
-
 </head>
 <body>
 
 <!--<nav id='menu' class="navbar navbar-default" style="margin: 0;">-->
-<!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-<!--<ul class="mynav">-->
-<!--<li>品种代码</li>-->
-<!--<li><img src="../img/大分割线.png" class="big-line"></li>-->
-<!--<li><a href="#"  class="mybtn ">M1</a></li>-->
-<!--<li><a href="#"  class="mybtn ">M5</a></li>-->
-<!--<li><a href="#"  class="mybtn ">M15</a></li>-->
-<!--<li><a href="#"  class="mybtn ">M30</a></li>-->
-<!--<li><a href="#"  class="mybtn ">H1</a></li>-->
-<!--<li><a href="#"  class="mybtn ">D1</a></li>-->
-<!--<li><a href="#"  class="mybtn ">W1</a></li>-->
-<!--<li><a href="#"  class="mybtn ">MN</a></li>-->
-<!--<li style="float:right;">-->
-<!--<a href="#"  class="mybtn "><img src="../img/search.png"> </a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
+    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+        <!--<ul class="nav nav-pills">-->
+            <!--<li role="presentation">品种代码</li>-->
+            <!--<li><img src="../img/大分割线.png" class="big-line"></li>-->
+            <!--<li><a href="#" class="mybtn ">M1</a></li>-->
+            <!--<li><a href="#" class="mybtn ">M5</a></li>-->
+            <!--<li><a href="#" class="mybtn ">M15</a></li>-->
+            <!--<li><a href="#" class="mybtn ">M30</a></li>-->
+            <!--<li><a href="#" class="mybtn ">H1</a></li>-->
+            <!--<li><a href="#" class="mybtn ">D1</a></li>-->
+            <!--<li><a href="#" class="mybtn ">W1</a></li>-->
+            <!--<li><a href="#" class="mybtn ">MN</a></li>-->
+            <!--<li style="float:right;">-->
+                <!--<a href="#" class="mybtn "><img src="../img/search.png"> </a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
 <!--</nav>-->
 
 <div id="content">
@@ -71,11 +69,28 @@
                     <td>481.70</td>
                     <td>+5.0%</td>
                 </tr>
+                <tr data-code="SC1809">
+                    <td>2</td>
+                    <td>原油1809</td>
+                    <td>481.70</td>
+                    <td>+5.0%</td>
+                </tr>
                 </tbody>
             </table>
         </div>
         <div id="chart" class="chart">
+
             <div id="chart-head" class="chart-head">
+                <!--<br>-->
+                <!--<div class="row">-->
+                    <!--<div class="col-lg-6">-->
+                        <!--<span class="label label-default"><span id="date">&#45;&#45;</span></span>-->
+                    <!--</div>-->
+                    <!--<div class="col-lg-6">-->
+                        <!--<span class="label label-default">开=<span id="open">&#45;&#45;</span></span>-->
+                    <!--</div>-->
+                <!--</div>-->
+
                 <table class="table table-condensed">
                     <tr>
                         <td><span id="date">--</span></td>
@@ -97,9 +112,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="label label-default">原油1809</span>
-                    <span class="label label-danger">481.70</span>
+                    <span class="label label-info">481.70</span>
+                    <div id="chart-minute" class="chart-minute"></div>
                 </div>
+
                 <div class="panel-body">
+
                     <table class="table table-condensed">
                         <thead>
                         <tr>
@@ -209,36 +227,42 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="hold">
                 <!-- 持仓-->
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-condensed">
                     <thead>
                     <tr>
                         <td>#</td>
                         <td>种类</td>
-                        <td>数量（正买负卖）</td>
+                        <td>方向</td>
+                        <td>数量</td>
                         <td>均价</td>
-                        <td>盈亏/比例</td>
+                        <td>浮动盈亏</td>
+                        <td>盈利率</td>
                     </tr>
                     </thead>
                     <tbody id="holdlist">
                     <tr data-code="SC1809" data-num="10" data-type="1" class="order_SC1809">
                         <td>1</td>
                         <td>原油1809</td>
+                        <td>买</td>
                         <td>10</td>
                         <td>476.60</td>
-                        <td class="profit">50999 / +70%</td>
+                        <td>509.99</td>
+                        <td>+7%</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <div role="tabpanel" class="tab-pane" id="order">
                 <!-- 报单-->
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-condensed">
                     <thead>
                     <tr>
                         <td>#</td>
                         <td>时间</td>
                         <td>种类</td>
-                        <td>数量（正买负卖）</td>
+                        <td>开/平</td>
+                        <td>方向</td>
+                        <td>数量</td>
                         <td>价格</td>
                         <td>状态</td>
                     </tr>
@@ -248,8 +272,10 @@
                         <td>1</td>
                         <td>2018-05-10 18:15:12</td>
                         <td>原油1809</td>
+                        <td>开</td>
+                        <td>买</td>
                         <td>10</td>
-                        <td>476.60</td>
+                        <td>470.60</td>
                         <td>已成交</td>
                     </tr>
                     </tbody>
@@ -257,14 +283,15 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="history">
                 <!-- 成交历史-->
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-condensed">
                     <thead>
                     <tr>
                         <td>#</td>
                         <td>时间</td>
                         <td>种类</td>
                         <td>开/平</td>
-                        <td>数量（正买负卖）</td>
+                        <td>方向</td>
+                        <td>数量</td>
                         <td>价格</td>
                         <td>手续费</td>
                     </tr>
@@ -275,8 +302,9 @@
                         <td>2018-05-10 18:15:12</td>
                         <td>原油1809</td>
                         <td>开</td>
+                        <td>买</td>
                         <td>10</td>
-                        <td>476.60</td>
+                        <td>470.60</td>
                         <td>30</td>
                     </tr>
                     </tbody>
@@ -512,6 +540,106 @@
                     yAxis: 1,
                     lineWidth: 1,
                 },]
+            });
+        });
+    });
+    //绘制分时图
+    $(function () {
+        $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
+            Highcharts.chart('chart-minute', {
+                chart: {
+                    backgroundColor: '#f4f4f4'
+                },
+                title: {
+                    text: false
+                },
+                exporting: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                scrollbar: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: false
+                },
+                xAxis: {
+                    type: 'datetime',
+                    lineColor: '#f4f4f4',
+                    tickLength: 0,
+                    gridLineWidth: 0,
+                    labels: {
+                        enabled: false
+                    }
+                },
+                yAxis: {
+                    tickLength: 0,
+                    gridLineWidth: 0,
+                    title: {
+                        text: false
+                    },
+                    labels: {
+                        enabled: false
+                    }
+                },
+                tooltip: {
+                    dateTimeLabelFormats: {
+                        millisecond: '%H:%M:%S.%L',
+                        second: '%H:%M:%S',
+                        minute: '%H:%M',
+                        hour: '%H:%M',
+                        day: '%Y-%m-%d',
+                        week: '%m-%d',
+                        month: '%Y-%m',
+                        year: '%Y'
+                    },
+                    backgroundColor: '#FCFFC5',   // 背景颜色
+                    borderColor: '#FCFFC5',         // 边框颜色
+                    borderRadius: 10,             // 边框圆角
+                    borderWidth: 3,               // 边框宽度
+                    shadow: true,                 // 是否显示阴影
+                    animation: true,               // 是否启用动画效果
+                    style: {                      // 文字内容相关样式
+                        color: "#ff0000",
+                        fontSize: "12px",
+                        fontWeight: "blod",
+                        fontFamily: "Courir new"
+                    }
+
+                },
+                plotOptions: {
+                    area: {
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, Highcharts.getOptions().colors[0]],
+                                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            ]
+                        },
+                        marker: {
+                            radius: 2
+                        },
+                        lineWidth: 1,
+                        states: {
+                            hover: {
+                                lineWidth: 1
+                            }
+                        },
+                        threshold: null
+                    }
+                },
+                series: [{
+                    type: 'area',
+                    name: '价格',
+                    data: data
+                }]
             });
         });
     });
